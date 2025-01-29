@@ -1,0 +1,1 @@
+This vending machine allows users to browse categories, select items, insert money, and complete purchases. Admins can update inventory. Features include stock checks, error handling, and cart management.
