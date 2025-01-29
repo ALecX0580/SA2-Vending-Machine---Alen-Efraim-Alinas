@@ -97,7 +97,6 @@ def select_item(ItemCode):   # Add selected item to the cart and reduce stock
             return
     messagebox.showerror("Invalid Item", "The selected item code is not valid.")
 
-
 def insert_money(): # Allow to insert money temporarily for the purchase of items
     try:
         amount = float(simpledialog.askstring("Insert Money", "Enter amount to insert:"))
@@ -172,7 +171,6 @@ def admin_panel():  # Open admin panel for managing inventory
                     messagebox.showinfo("Update Successful", f"Updated {items[item_code][0]} - Price: ${new_price}, Stock: {new_stock}")
                     update_inventory()  # Update the inventory display
                     break
-
             if not item_found:
                 messagebox.showerror("Item Not Found", "The item code you entered is not valid.")
         else:
@@ -214,10 +212,7 @@ FrameInventory = tkk.Frame(Layout)
 Layout.create_window((0, 0), window=FrameInventory, anchor="nw")
 
 # Making sure scroll region updates dynamically as items are added
-FrameInventory.bind(
-    "<Configure>",
-    lambda e: Layout.configure(scrollregion=Layout.bbox("all"))
-)
+FrameInventory.bind("<Configure>",lambda e: Layout.configure(scrollregion=Layout.bbox("all")))
 
 # Populate the inventory display initially
 update_inventory()  
